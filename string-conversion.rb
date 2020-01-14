@@ -5,14 +5,12 @@ test_string4 = "14.32"
 
 
 def convert_to_int(string)
-  #Check for floats
+  #Remove any decimal value if the input is a float
   string = string.split('.')[0] if string.include?('.')
-  #Check for negative numbers
-  sign = 1
-  if string[0] == '-'
-    string = string[1, string.length-1]
-    sign = -1
-  end
+  #Recognize if it is a negative number and skip the first character 
+  sign = string[0] == '-' ? -1 : 1
+  string = string[1, string.length-1] if string[0] == '-'
+
   num = 0
   string.each_char do |char|
     #Use ASCII character code, and subtract 48 (the character code of '0'
