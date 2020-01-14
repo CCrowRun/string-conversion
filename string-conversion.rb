@@ -5,9 +5,7 @@ def convert_to_int(string)
   sign = string[0] == '-' ? -1 : 1
   string.gsub!(/\A-/, '')
 
-  num = 0
-  string.each_char do |char|
-    num = num * 10 + (char.ord - "0".ord)
-  end
+  nums = string.chars.map { |char| char.ord - "0".ord }
+  num = nums.inject(0) { |acc, num| 10 * acc + num }
   num * sign
 end
