@@ -1,9 +1,3 @@
-test_string = "123"
-test_string2 = "4"
-test_string3 = "-9803"
-test_string4 = "14.32"
-
-
 def convert_to_int(string)
   #Remove any decimal value if the input is a float
   string = string.split('.')[0] if string.include?('.')
@@ -16,7 +10,5 @@ def convert_to_int(string)
     #Use ASCII character code, and subtract 48 (the character code of '0'
     num = num * 10 + (char.ord - 48)
   end
-  return num * sign
+  num * sign
 end
-
-convert_to_int(test_string)
