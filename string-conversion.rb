@@ -7,7 +7,6 @@ def convert_to_int(string)
 
   num = 0
   string.each_char do |char|
-    #Use ASCII character code, and subtract 48 (the character code of '0')
     num = num * 10 + (char.ord - "0".ord)
   end
   num * sign
